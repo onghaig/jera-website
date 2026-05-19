@@ -312,13 +312,16 @@ function WhoItsFor() {
 }
 
 // ============ REQUEST ACCESS ============
+const FORMSPREE_ID = 'maqkqbgz'
+
 function RequestAccess() {
   const [email, setEmail]       = useState('')
   const [org, setOrg]           = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading]   = useState(false)
   const [error, setError]       = useState('')
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     if (!email.includes('@') || !email.includes('.')) {
       setError('Please enter a valid work email.')
@@ -328,8 +331,24 @@ function RequestAccess() {
       setError('Please enter your organization name.')
       return
     }
-    setSubmitted(true)
+    setLoading(true)
     setError('')
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email, organization: org }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError('Something went wrong. Please try again.')
+      }
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -375,8 +394,8 @@ function RequestAccess() {
               </div>
             </div>
             {error && <p className="form-error">{error}</p>}
-            <button type="submit" className="btn-primary btn-primary--full">
-              Request Access
+            <button type="submit" className="btn-primary btn-primary--full" disabled={loading}>
+              {loading ? 'Sending…' : 'Request Access'}
             </button>
             <p className="form-note">
               No commitment required. We&rsquo;ll reach out within 48 hours.
