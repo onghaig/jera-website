@@ -274,7 +274,6 @@ function WhoItsFor() {
           </div>
 
           <div className="tier-card tier-card--featured fade-up delay-2">
-            <div className="tier-card__badge">Most Common</div>
             <div className="tier-card__segment">EV Manufacturers</div>
             <div className="tier-card__price">
               $200K–500K<span>/yr</span>
