@@ -25,7 +25,10 @@ function Nav() {
         <span className="nav-logo">
           JERA<span className="nav-logo-dot">.</span>
         </span>
-        <a href="#access" className="nav-cta">Request Access</a>
+        <div className="nav-links">
+          <a href="/cobalt-aoi-atlas.html" className="nav-link">Interactive Atlas</a>
+          <a href="#access" className="nav-cta">Request Access</a>
+        </div>
       </div>
     </nav>
   )
@@ -61,8 +64,8 @@ function Hero() {
           supply disruptions before they reach your portfolio or factory floor.
         </p>
         <div className="hero-cta-row">
-          <a href="#access" className="btn-primary">Request Access</a>
-          <a href="#problem" className="btn-secondary">See the Evidence</a>
+          <a href="/cobalt-aoi-atlas.html" className="btn-primary">Launch Interactive Atlas</a>
+          <a href="#access" className="btn-secondary">Request Access</a>
         </div>
         <div className="hero-scroll-hint">Scroll</div>
       </div>
