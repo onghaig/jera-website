@@ -27,6 +27,7 @@ function Nav() {
         </span>
         <div className="nav-links">
           <a href="/cobalt-aoi-atlas" className="nav-link">Interactive Atlas</a>
+          <a href="/dashboard" className="nav-link">Strategy Backtest</a>
           <a href="#access" className="nav-cta">Request Access</a>
         </div>
       </div>
@@ -65,7 +66,7 @@ function Hero() {
         </p>
         <div className="hero-cta-row">
           <a href="/cobalt-aoi-atlas" className="btn-primary">Launch Interactive Atlas</a>
-          <a href="#access" className="btn-secondary">Request Access</a>
+          <a href="/dashboard" className="btn-secondary">Strategy Backtest</a>
         </div>
         <div className="hero-scroll-hint">Scroll</div>
       </div>
