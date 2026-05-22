@@ -481,7 +481,7 @@
             <div class="legend-dot" style="background:var(--kamoto)"></div>Kamoto
           </div>
           <div class="legend-item" style="cursor:default">
-            <div class="legend-dot" style="background:#555;border-top:1px dashed #555"></div>Cobalt Price
+            <div class="legend-dot" style="background:#555;border-top:1px dashed #555"></div>LME COBALT PRICE
           </div>
         </div>
         <div id="activity-chart-wrapper">
@@ -691,7 +691,7 @@
 
       // Price dataset (daily, no nulls)
       datasets.push({
-        label: "Cobalt Price (GLEN.L)",
+        label: "LME COBALT PRICE",
         data: priceData.prices.map(p => p.normalized),
         borderColor: "#555555",
         backgroundColor: "transparent",
@@ -723,7 +723,7 @@
               bodyFont: { family: "'IBM Plex Mono', monospace", size: 10 },
               callbacks: {
                 label: ctx => {
-                  if (ctx.dataset.label === "Cobalt Price (GLEN.L)") {
+                  if (ctx.dataset.label === "LME COBALT PRICE") {
                     return `  ${ctx.dataset.label}: ${(ctx.raw * 100).toFixed(1)}%`;
                   }
                   return `  ${ctx.dataset.label}: ${ctx.raw.toFixed(3)}`;
